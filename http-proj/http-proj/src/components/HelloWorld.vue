@@ -3,7 +3,7 @@
         <h1>Your IP is {{ ip }}</h1>
         <input type="text" v-model="input.firstname" placeholder="First Name" />
         <input type="text" v-model="input.lastname" placeholder="Last Name" />
-        <button>Send</button>
+        <button v-on:click="sendData()">Send</button>
         <br />
         <br />
         <textarea>{{ response }}</textarea>
@@ -12,6 +12,17 @@
 
 <script>
     import axios from "axios";
+    import jquery from "jquery";
+
+    var params = {
+        "visualFeatures": "Categories,Description,Color",
+        "details": "",
+        "language": "en",
+    };
+
+    var azure_url = "https://" + "westcentralus" + ".api.cognitive.microsoft.com/vision/" + "v1.0/analyze" + "?" + "visualFeatures=Categories%2CDescription%2CColor&details=&language=en"
+
+
 
     export default {
         name: 'HelloWorld',
@@ -32,7 +43,21 @@
                 console.error(error);
             });
         },
-        methods: { }
+        methods: {
+            sendData() {
+                    //   data: '{"url": ' + '"' + sourceImageUrl + '"}',
+
+
+
+                axios({ method: "POST", "url": azure_url, "data": '{"url": "https://hdrexposed.zenfolio.com/img/s/v-3/p919518288-3.jpg"}', "headers": { "content-type":   "application/json",
+                                                                                                                                    "Ocp-Apim-Subscription-Key":  "b11c9fd600af44ac9a47523923a7fd17"} }).then(result => {
+                    this.response = result.data.description;
+                    console.log(result.data);
+                }, error => {
+                    console.error(error);
+                });
+            }
+        }
     }
 </script>
 

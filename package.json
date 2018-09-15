@@ -1,0 +1,19 @@
+{
+  "name": "htn-weather",
+  "version": "1.0.0",
+  "description": "#### Tech Stack - Vue.JS - Flask",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/richarthurs/htn-weather.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/richarthurs/htn-weather/issues"
+  },
+  "homepage": "https://github.com/richarthurs/htn-weather#readme"
+}
