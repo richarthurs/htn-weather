@@ -1,0 +1,133 @@
+[debug] [2018-09-15T21:55:37.250Z] ----------------------------------------------------------------------
+[debug] [2018-09-15T21:55:37.253Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Pearl\AppData\Roaming\npm\node_modules\firebase-tools\bin\firebase deploy
+[debug] [2018-09-15T21:55:37.253Z] CLI Version:   4.2.1
+[debug] [2018-09-15T21:55:37.253Z] Platform:      win32
+[debug] [2018-09-15T21:55:37.253Z] Node Version:  v8.12.0
+[debug] [2018-09-15T21:55:37.253Z] Time:          Sat Sep 15 2018 17:55:37 GMT-0400 (Eastern Daylight Time)
+[debug] [2018-09-15T21:55:37.253Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2018-09-15T21:55:37.263Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2018-09-15T21:55:37.264Z] > authorizing via signed-in user
+[debug] [2018-09-15T21:55:37.266Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/htn2018-weather  
+ 
+[debug] [2018-09-15T21:55:37.591Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Deploying to 'htn2018-weather'...
+[info] 
+[info] i  deploying database, storage, firestore, functions, hosting
+[info] Running command: npm --prefix ./functions run lint
+[info] +  functions: Finished running predeploy script.
+[info] i  database: checking rules syntax...
+[debug] [2018-09-15T21:55:45.165Z] >>> HTTP REQUEST PUT https://htn2018-weather.firebaseio.com/.settings/rules.json?dryRun=true  
+ {
+  /* Visit https://firebase.google.com/docs/database/security to learn more about security rules. */
+  "rules": {
+    ".read": false,
+    ".write": false
+  }
+}
+[debug] [2018-09-15T21:55:45.495Z] <<< HTTP RESPONSE 200
+[info] +  database: rules syntax for database htn2018-weather is valid
+[debug] [2018-09-15T21:55:45.501Z] >>> HTTP REQUEST GET https://appengine.googleapis.com/v1/apps/htn2018-weather  
+ 
+[debug] [2018-09-15T21:55:45.876Z] <<< HTTP RESPONSE 200
+[info] i  storage: checking storage.rules for compilation errors...
+[debug] [2018-09-15T21:55:45.883Z] >>> HTTP REQUEST POST https://firebaserules.googleapis.com/v1/projects/htn2018-weather:test  
+
+[debug] [2018-09-15T21:55:46.018Z] <<< HTTP RESPONSE 200
+[info] +  storage: rules file storage.rules compiled successfully
+[info] i  firestore: checking firestore.rules for compilation errors...
+[debug] [2018-09-15T21:55:46.029Z] >>> HTTP REQUEST POST https://firebaserules.googleapis.com/v1/projects/htn2018-weather:test  
+
+[debug] [2018-09-15T21:55:46.141Z] <<< HTTP RESPONSE 200
+[info] +  firestore: rules file firestore.rules compiled successfully
+[debug] [2018-09-15T21:55:46.153Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "lint": "eslint .",
+    "serve": "firebase serve --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "dependencies": {
+    "firebase-admin": "~6.0.0",
+    "firebase-functions": "^2.0.3"
+  },
+  "devDependencies": {
+    "eslint": "^4.12.0",
+    "eslint-plugin-promise": "^3.6.0"
+  },
+  "private": true
+}
+[info] i  functions: ensuring necessary APIs are enabled...
+[debug] [2018-09-15T21:55:46.155Z] >>> HTTP REQUEST GET https://servicemanagement.googleapis.com/v1/services/cloudfunctions.googleapis.com/projectSettings/htn2018-weather?view=CONSUMER_VIEW  
+ 
+[debug] [2018-09-15T21:55:46.156Z] >>> HTTP REQUEST GET https://servicemanagement.googleapis.com/v1/services/runtimeconfig.googleapis.com/projectSettings/htn2018-weather?view=CONSUMER_VIEW  
+ 
+[debug] [2018-09-15T21:55:46.911Z] <<< HTTP RESPONSE 200
+[debug] [2018-09-15T21:55:47.029Z] <<< HTTP RESPONSE 200
+[info] +  functions: all necessary APIs are enabled
+[debug] [2018-09-15T21:55:47.036Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/htn2018-weather  
+ 
+[debug] [2018-09-15T21:55:47.325Z] <<< HTTP RESPONSE 200
+[debug] [2018-09-15T21:55:47.325Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/1050797363023:getServerAppConfig  
+ 
+[debug] [2018-09-15T21:55:47.494Z] <<< HTTP RESPONSE 200
+[info] i  storage: uploading rules storage.rules...
+[debug] [2018-09-15T21:55:47.506Z] >>> HTTP REQUEST POST https://firebaserules.googleapis.com/v1/projects/htn2018-weather/rulesets  
+
+[debug] [2018-09-15T21:55:47.719Z] <<< HTTP RESPONSE 200
+[debug] [2018-09-15T21:55:47.720Z] [rules] created ruleset projects/htn2018-weather/rulesets/32171d0b-7050-459e-81fb-fc33ce6e8774
+[info] i  firestore: uploading rules firestore.rules...
+[debug] [2018-09-15T21:55:47.726Z] >>> HTTP REQUEST POST https://firebaserules.googleapis.com/v1/projects/htn2018-weather/rulesets  
+
+[debug] [2018-09-15T21:55:47.727Z] >>> HTTP REQUEST GET https://firestore.googleapis.com/v1beta1/projects/htn2018-weather/databases/(default)/indexes  
+ 
+[debug] [2018-09-15T21:55:47.963Z] <<< HTTP RESPONSE 200
+[debug] [2018-09-15T21:55:47.964Z] [rules] created ruleset projects/htn2018-weather/rulesets/5d12d99f-dbe0-473b-8c15-327002a24eeb
+[debug] [2018-09-15T21:55:48.181Z] <<< HTTP RESPONSE 200
+[info] i  functions: preparing functions directory for uploading...
+[debug] [2018-09-15T21:55:48.191Z] >>> HTTP REQUEST GET https://runtimeconfig.googleapis.com/v1beta1/projects/htn2018-weather/configs  
+ 
+[debug] [2018-09-15T21:55:48.355Z] <<< HTTP RESPONSE 200
+[info] i  hosting[htn2018-weather]: beginning deploy...
+[debug] [2018-09-15T21:55:48.802Z] Error: ENOTDIR invalid cwd C:\Users\Pearl\Desktop\htn-weather\index.html
+    at GlobSync._readdirError (C:\Users\Pearl\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\glob\sync.js:324:21)
+    at GlobSync._readdir (C:\Users\Pearl\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\glob\sync.js:290:10)
+    at GlobSync._processGlobStar (C:\Users\Pearl\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\glob\sync.js:350:22)
+    at GlobSync._process (C:\Users\Pearl\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\glob\sync.js:130:10)
+    at new GlobSync (C:\Users\Pearl\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\glob\sync.js:48:10)
+    at globSync (C:\Users\Pearl\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\glob\sync.js:26:10)
+    at module.exports (C:\Users\Pearl\AppData\Roaming\npm\node_modules\firebase-tools\lib\listFiles.js:6:10)
+    at _runDeploys (C:\Users\Pearl\AppData\Roaming\npm\node_modules\firebase-tools\lib\deploy\hosting\deploy.js:38:19)
+    at module.exports (C:\Users\Pearl\AppData\Roaming\npm\node_modules\firebase-tools\lib\deploy\hosting\deploy.js:79:10)
+    at _chain (C:\Users\Pearl\AppData\Roaming\npm\node_modules\firebase-tools\lib\deploy\index.js:26:38)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2018-09-15T22:02:44.282Z] ----------------------------------------------------------------------
+[debug] [2018-09-15T22:02:44.284Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Pearl\AppData\Roaming\npm\node_modules\firebase-tools\bin\firebase serve --only hosting
+[debug] [2018-09-15T22:02:44.285Z] CLI Version:   4.2.1
+[debug] [2018-09-15T22:02:44.285Z] Platform:      win32
+[debug] [2018-09-15T22:02:44.285Z] Node Version:  v8.12.0
+[debug] [2018-09-15T22:02:44.285Z] Time:          Sat Sep 15 2018 18:02:44 GMT-0400 (Eastern Daylight Time)
+[debug] [2018-09-15T22:02:44.285Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2018-09-15T22:02:44.297Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2018-09-15T22:02:44.298Z] > authorizing via signed-in user
+[debug] [2018-09-15T22:02:44.300Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/htn2018-weather  
+ 
+[debug] [2018-09-15T22:02:44.621Z] <<< HTTP RESPONSE 200
+[debug] [2018-09-15T22:02:44.624Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/htn2018-weather  
+ 
+[debug] [2018-09-15T22:02:44.924Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from 'C:\Users\Pearl\Desktop\htn-weather'...
+[info] 
+[debug] [2018-09-15T22:02:44.930Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/1050797363023/clients/_:getWebAppConfig  
+ 
+[debug] [2018-09-15T22:02:45.113Z] <<< HTTP RESPONSE 200
+[info] i  hosting[htn2018-weather]: Serving hosting files from: /index.html
+[info] +  hosting[htn2018-weather]: Local server: http://localhost:5000
