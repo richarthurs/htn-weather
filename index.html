@@ -1,7 +1,8 @@
-<html lang = "en">
+<html>
 	<head>
 			<script src="https://www.gstatic.com/firebasejs/5.5.0/firebase.js"></script>
 			<script src= "https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+			<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 			<script src="https://unpkg.com/leaflet@0.7.7/dist/leaflet.js"></script>
 			<script src="https://api4.windy.com/assets/libBoot.js"></script>
 			  <style>
@@ -53,14 +54,14 @@
 
 		<div id= "app">
 			{{Upload Image Here}}
+			<textarea id="response"></textarea>
 		</div>
-		<script src ="Text-.js"></script>
 		<progress value = "0" max = "100" id= "uploader">0%</progress>
 		<input type = "file" value="upload" id = "fileButton" />
 				
 <script>
 
-	//Get Elements
+//Get Elements
   var uploader = document.getElementById ('uploader');
   var fileButton = document.getElementById ('fileButton');
   
@@ -74,8 +75,7 @@
 	 
 	 //Upload file
 	 var task = storageRef.put(file);
-	 
-	 //Update progress bar
+	//Update progress bar
 	 task.on('state_changed',
 			 
 			 function progress(snapshot) {
@@ -89,12 +89,58 @@
 			 },
 			 
 			 function complete(){
-				
-			 },
-			 );
-  });
-	
-  </script>
-	</body>
+				// Create a reference to the file we want to download
+				storageRef.getDownloadURL().then(function(url) {
+					console.log(url);
+					var azure_url = "https://southcentralus.api.cognitive.microsoft.com/customvision/v2.0/Prediction/6dc182f9-bfd8-4500-a0c3-5f78d07c0ab8/url"
 
+					var xhr = new XMLHttpRequest();
+					xhr.onreadystatechange=function(){
+						if (xhr.readyState ===4){
+							console.log(xhr.response);
+							$("#response").text(JSON.stringify(xhr.response))
+						}
+					}
+					xhr.open('POST', azure_url, true);
+					xhr.setRequestHeader("content-type", "application/json");
+					xhr.setRequestHeader("Prediction-Key",  "53465eed449a4f41bfd238b8614cd4af");
+					xhr.send(JSON.stringify(
+						{"url": url}
+					));
+
+
+						
+					
+						
+					;
+			 },
+			 ).catch(function(err){ console.log(err) });
+			});
+});
+	
+
+
+//   import axios from "axios";
+// import jquery from "jquery";
+
+// var azure_url = "https://southcentralus.api.cognitive.microsoft.com/customvision/v2.0/Prediction/6dc182f9-bfd8-4500-a0c3-5f78d07c0ab8/url"
+
+//     export default {
+//         mounted() {
+//         methods: {
+//             sendURLData(imgURL){
+// 				axios({ method: "POST", "url": azure_url, "data": '{"url": }', "headers": { "content-type":   "application/json",
+//                                                                                                           "Prediction-Key":  "53465eed449a4f41bfd238b8614cd4af"} }).then(result => {
+//                     this.response = result.data;
+//                     console.log(result.data);
+//                 }, error => {
+//                     console.error(error);
+//                 });
+//             }
+//         }
+// 	}
+// }
+
+	</script>
+	</body>
 </html>
