@@ -1,38 +1,63 @@
 <html lang = "en">
-		<script src="https://www.gstatic.com/firebasejs/5.5.0/firebase.js"></script>
-		<script src= "https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-		
 	<head>
+			<script src="https://www.gstatic.com/firebasejs/5.5.0/firebase.js"></script>
+			<script src= "https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+			<script src="https://unpkg.com/leaflet@0.7.7/dist/leaflet.js"></script>
+			<script src="https://api4.windy.com/assets/libBoot.js"></script>
+			  <style>
+				  #windy {
+					  width: 100%;
+					  height: 100%;
+				  }
+			  </style>
 		<meta charset="utf-8">
 		<Title>Stormie</Title>
 	</head>
 	<body>
-<script>
-  // Initialize Firebase
-  var config = {
-    apiKey: "AIzaSyBCvgQDWbjTy6hQMJUa8UN8Y3wCUL5vPt4",
-    authDomain: "htn2018-weather.firebaseapp.com",
-    databaseURL: "https://htn2018-weather.firebaseio.com",
-    projectId: "htn2018-weather",
-    storageBucket: "htn2018-weather.appspot.com",
-    messagingSenderId: "1050797363023"
-  };
-  firebase.initializeApp(config);
-//   const db = firebase.firestore();
-//   db.settings({ timestampsInSnapshots: true }); 
-</script>
-
+			<div id="windy"></div>
+			<script>
+					const options = {
+								// Required: API key
+								key: 'Tnwm1h3G7Hd30qnvYU9uY6Bad9w9HBiC',
+				
+								// Put additional console output
+								verbose: true,
+				
+								// Optional: Initial state of the map
+								lat: 43.4659328,
+								lon: -80.53473280000001,
+								zoom: 5,
+						}
+				
+					// Initialize Windy API
+					windyInit( options, windyAPI => {
+						// windyAPI is ready, and contain 'map', 'store',
+						// 'picker' and other usefull stuff
+						const { map } = windyAPI
+						// .map is instance of Leaflet map
+						L.popup().setLatLng([43.4659328,-80.53473280000001]).setContent("Hello World").openOn( map );
+					})
+					</script>
+			<script>
+				// Initialize Firebase
+				var config = {
+					apiKey: "AIzaSyBCvgQDWbjTy6hQMJUa8UN8Y3wCUL5vPt4",
+					authDomain: "htn2018-weather.firebaseapp.com",
+					databaseURL: "https://htn2018-weather.firebaseio.com",
+					projectId: "htn2018-weather",
+					storageBucket: "htn2018-weather.appspot.com",
+					messagingSenderId: "1050797363023"
+					};
+				firebase.initializeApp(config);
+			</script>
 
 		<div id= "app">
-			{{message}}
+			{{Upload Image Here}}
 		</div>
 		<script src ="Text-.js"></script>
 		<progress value = "0" max = "100" id= "uploader">0%</progress>
 		<input type = "file" value="upload" id = "fileButton" />
-		
-		
-		
-		
+				
 <script>
 
 	//Get Elements
@@ -69,9 +94,6 @@
 			 );
   });
 	
-	
-	
-  
   </script>
 	</body>
 
