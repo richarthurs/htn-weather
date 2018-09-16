@@ -79,8 +79,19 @@
 
 
 		}
+		#temp{
+			display:none;
+		}
 	</style>
-
+	<script>
+			$(document).ready(function(){
+			$("About").click(function(){
+				$("#placement").fadeOut(3000);
+				$("#program").fadeOut(3000);
+				$("bg").fadeOut(3000);
+			});
+		});
+			</script>
 	<title>Homepage</title>
 </head>
 
@@ -89,7 +100,7 @@
 
 	<div class="wrapper">
 		<div id="placement">
-			<a href="P2.html" title="About">About</a>
+			<a href >About</a>
 		</div>
 
 		<div id="program">
@@ -117,6 +128,8 @@
 			</div>
 		</div>
 	</div>
+
+
 </body>
 
 </html>
