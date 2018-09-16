@@ -2,18 +2,8 @@
 	<body>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <head>
-	<script
-			src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
-		
-	</script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	
-<script>
-	$(document).ready(function(){
-		$("Title").click(function(){
-		$("#left").fadeIn(3000);
-		});
-	});
-</script>
 <style>
 body, html {
     height: 100%;
@@ -42,14 +32,22 @@ body, html {
 	text-align: center;
 	clear: both;
 	margin: -48% auto 0 auto;
-	
-#left {
+}
+#Problem {
 	font-size: 20px;
 	font-family: "Segoe UI", "Helvetica";
 	color: #CFCFCF;
 	text-align: center;
 	float: left;
-	margin-top; -27%;
+	margin-top: 15%;
+}
+#Solution{
+	font-size: 20px;
+	font-family: "Segoe UI", "Helvetica";
+	color: #CFCFCF;
+	text-align: center;
+	float: right;
+	margin-top: 15%;
 }
 #wrapper {
 
@@ -58,17 +56,28 @@ body, html {
 
 	
 }
-}
-</style>
 
+</style>
+<script>
+	$(document).ready(function(){
+		$("#Title").click(function(){
+			$("problem").fadeIn();
+			$("solution").fadeIn(10000);
+		});
+	});
+</script>	
 </head>
 
-</style>
+
 <div class = "bg"></div>
+
 <div id = "Title">What is the goal?</div>
 <div id = "wrapper">
-	<div id = "left">
-			Text describing the problem
+	<div id = "Problem">
+			<h3>Text describing the problem</h3><br><br>
+	</div>
+	<div id = "Solution">
+		<h3>Text describing our solution</h3>
 	</div>
 </div>
 

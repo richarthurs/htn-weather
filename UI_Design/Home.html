@@ -1,91 +1,122 @@
-<html lang = 'en'>
-	
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+
+<html lang='en'>
+
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js" type="text/javascript">
+
+	</script>
+	<style type="text/css">
+		body,
+		html {
+			height: 100%;
+			margin: 0;
+		}
+
+		.bg {
+			/* The image used */
+			background-image: url("Tornado.jpg");
+
+			/* Full height */
+			height: 100%;
+
+			/* Center and scale the image nicely */
+			background-position: center;
+			background-repeat: no-repeat;
+			background-size: cover;
+
+			z-index: 100;
+
+		}
+
+		#title {
+			font-size: 125px;
+			font-family: "Segoe UI", "Helvetica";
+			color: #CFCFCF;
+			text-align: center;
+			clear: both;
+			margin: -30% auto 0 auto;
+			z-index: 500;
+
+
+		}
+
+		a {
+			text-decoration: none;
+			color: #CFCFCF;
+
+		}
+
+		#placement {
+
+			margin-top: -30%;
+			width: 200px;
+			z-index: 500;
+			float: left;
+			font-family: "Segoe UI", "Helvetica";
+			font-size: 20px;
+			text-align: center;
+
+
+		}
+
+		#program {
+			margin-top: -30%;
+			width: 200px;
+			z-index: 500;
+			float: right;
+			font-family: "Segoe UI", "Helvetica";
+			font-size: 20px;
+			text-align: center;
+
+		}
+
+		.wrapper {
+
+			width: 80%;
+			margin: 0 auto;
+
+
+		}
+	</style>
+
+	<title>Homepage</title>
+</head>
+
 <body>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
-body, html {
-    height: 100%;
-    margin: 0;
-}
+	<div class="bg"></div>
 
-.bg {
-    /* The image used */
-    background-image: url("Tornado.jpg");
+	<div class="wrapper">
+		<div id="placement">
+			<a href="P2.html" title="About">About</a>
+		</div>
 
-    /* Full height */
-    height: 100%; 
+		<div id="program">
+			<a href="program.html" title="The Program">Program</a>
+		</div>
 
-    /* Center and scale the image nicely */
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-	
-	z-index: 100;
-	
-}
-#Title {
-		font-size: 125px;
-		font-family:"Segoe UI", "Helvetica";
-		color:#CFCFCF;
-	text-align: center;
-	clear: both;
-	margin: -30% auto 0 auto;
-	
-}
-a{
-	text-decoration: none;
-		color:#CFCFCF;
-	
-}
-#placement {
-	
-	margin-top: -55%;
-	width: 200px;
-	z-index: 500;
-	float: left;
-	font-family: "Segoe UI", "Helvetica";
-	font-size: 20px;
-	text-align: center;
-	
-	
-}
-#program {
-	margin-top: -55%;
-	width: 200px;
-	z-index: 500;
-	float: right;
-	font-family: "Segoe UI", "Helvetica";
-	font-size: 20px;
-	text-align: center;
-	
-}
-#wrapper {
-
-	width: 80%;
-	margin: 0 auto;
-
-	
-}
-
-</style>
-
-
-<title>Homepage
-	</title>
-	
-<div class="bg"></div>
-
-	<div id= "wrapper">
-	<div id = "placement">
-	
-	<a href= "P2.html" title= "About">About  
-		</a>
+		<div id="title">
+			Stormie
+		</div>
 	</div>
-	<div id = "program">
-	<a href= "program.html" title = "The Program"> Program</a>
+
+	<div id="temp">
+		<div id="Title1">
+			What is the goal?
+		</div>
+
+		<div class="wrapper">
+			<div id="Problem">
+				<h3>Text describing the problem</h3><br>
+				<br>
+			</div>
+
+			<div id="Solution">
+				<h3>Text describing our solution</h3>
+			</div>
+		</div>
 	</div>
-</div>
-	<div id = "title">Title</div>
-	
 </body>
+
 </html>
