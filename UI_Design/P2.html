@@ -1,0 +1,75 @@
+<html>
+	<body>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<head>
+	<script
+			src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+		
+	</script>
+	
+<script>
+	$(document).ready(function(){
+		$("Title").click(function(){
+		$("#left").fadeIn(3000);
+		});
+	});
+</script>
+<style>
+body, html {
+    height: 100%;
+    margin: 0;
+}
+
+.bg {
+    /* The image used */
+    background-image: url("Dustbowl.jpg");
+
+    /* Full height */
+    height: 100%; 
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+	
+	z-index: 100;
+	
+}
+#Title {
+		font-size: 75px;
+		font-family:"Segoe UI", "Helvetica";
+		color:#CFCFCF;
+	text-align: center;
+	clear: both;
+	margin: -48% auto 0 auto;
+	
+#left {
+	font-size: 20px;
+	font-family: "Segoe UI", "Helvetica";
+	color: #CFCFCF;
+	text-align: center;
+	float: left;
+	margin-top; -27%;
+}
+#wrapper {
+
+	width: 80%;
+	margin: 0 auto;
+
+	
+}
+}
+</style>
+
+</head>
+
+</style>
+<div class = "bg"></div>
+<div id = "Title">What is the goal?</div>
+<div id = "wrapper">
+	<div id = "left">
+			Text describing the problem
+	</div>
+</div>
+
+</html>
