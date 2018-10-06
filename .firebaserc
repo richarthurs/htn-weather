@@ -1,5 +1,6 @@
 {
   "projects": {
-    "default": "htn2018-weather"
+    "default": "htn2018-weather",
+    "staging": "htn-weather"
   }
 }
